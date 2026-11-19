@@ -100,3 +100,25 @@ Cuenta con métodos relevantes como: compareTo, donde se compara con otra casill
 
 ===== Laberinto:
 Este archivo parece tener varias responsabilidades todas relacionadas con la grilla del laberinto, Se encarga de definir la grilla del laberinto utilizando una matriz de enteros, 10x15, contener los diferentes colores relacionados a las casillas basados en su estado, definir la meta y la salida junto a su posicion, contar con varios tableros escogibles. Entre sus metodos destacan: Un metodo para limpiar y reiniciar el laberinto, Un metodo para hacer una animacion en la GUI del laberinto siendo resuelto Y un metodo para modificar el tipo o estado de una casilla en especifico.
+
+==== Tablero:
+Este paquete es el encargado de manejar toda la logica y armado de la GUI del Software, esta enteramente escrito con la libreria de Swing. Sus Archivos relevantes son:
+===== MainThread:
+Extiende de la clase Thread y parece ser el encargado de gestionar la logica del hilo principal de la app, bloqueando acciones como modificar el tablero mientras es ejecutado.
+
+===== PanelTablero:
+Se encarga de definir por medio de un JPanel el panel del labrinto en la GUI ademas de gestionar eventos de mouse, para cambiar el estado de las casillas cuando se les hace click.
+
+===== LaberintoGUI:
+Se encarga de pintar toda la interfaz grafica del software, tales como botones, paneles y campos de texto.
+
+==== basic:
+Este paquete parece contener toda la logica relacionada con acciones y comportamientos basicos del funcionamiento del sistema en general. Sus Archivos relevantes son:
+===== Action:
+Es una interfaz que define el contrato a realizar por todas las acciones, cuenta con los metodos nombre el cual retorna el nombre de la accion, coste el cual retonrna el costo en casillas de un movimiento, posible el cual indica si una accion es posible, aplicar la cual ejecuta la accion.
+===== State:
+Interfaz que parece definir contrato que deben cumplir las instacias del estado global del juego o del laberinto, cuenta con los atributos, posible el cual retorna si una Action es posible, succesor el cual aplica una Action, copy devuelve una copia del estado actual, compareTo, devuelve 1 si la comparacion con otro estado es esactamente la misma, y 0 si no lo es.
+
+===== Node:
+Parece ser el nodo de una cola
+
