@@ -120,5 +120,11 @@ Es una interfaz que define el contrato a realizar por todas las acciones, cuenta
 Interfaz que parece definir contrato que deben cumplir las instacias del estado global del juego o del laberinto, cuenta con los atributos, posible el cual retorna si una Action es posible, succesor el cual aplica una Action, copy devuelve una copia del estado actual, compareTo, devuelve 1 si la comparacion con otro estado es esactamente la misma, y 0 si no lo es.
 
 ===== Node:
-Parece ser el nodo de una cola
+Parece ser el encargado de definir un nodo en la solucion, cuenta con atributos como el estado actual del juego, la accion que lo llevo a ese estado, el nodo padre y el costo acumulado hasta ese nodo.
+
+===== Distacia:
+Parece ser una clase que contiene la informacion relacionada con la distancia restante de una casilla para alcanzar la meta.
+
+===== Problem:
+Parece modelar el problema en cuestion, pues se encarga de mostrar y resolver el laberinto, necesita como atributos el estado incial, la lista de acciones, y el objectivo final.
 
