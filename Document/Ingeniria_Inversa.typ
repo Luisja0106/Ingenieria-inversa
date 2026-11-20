@@ -123,7 +123,7 @@
 
 == Reconocimiento y mapa del sistema
 
-=== Primera impresión del código
+=== Primera impresión del código:
 
 El sistema parece ser un proyecto relacionado con un laberinto, se divide en esta jerarquía de directorios:
 - Laberinto
@@ -201,5 +201,35 @@ Parece contener multiples metodos o formas de realizar buesquedas de soluciones 
   Clase abstracta que implementa la interfaz Comparator del paquete java.utils, se encarga de definir los atributos y metodos que deben cumplir los diferentes comparadores.
 ]
 
+=== Tras Ejecutar la app (Sin herramientas de depurado):
+#v(1em)
+El software parece ser un laberinto donde el usuario puede definir un laberinto y parece tener una especie de IA, donde el software por si mismo debe encontrar la posible salida, parece tener una animacion donde encuentra la posible solucion, parece que tiene varios modos de busqueda los cuales son:
+
+- Profundidad
+- Anchura
+- Primero Mejor
+- Profundidad iterativa
+- Profundidad limitada
+- A\*
+
+parece que la Profundida Iterativa y Profundiad Limitada al usarse cuentan con un contador el cual va de 1 a 100.
+
+#v(1em)
+Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de color negro son muros o bloqueos, los bloques amarillos son casillas libres, el bloque rojo es la salida, y el bloque azul la meta, al iniciar la busqueda se hace un camino de solucion de color gris.
+#v(1em)
+
+
+
+
+
 === En Resumen:
+#v(1em)
 - El punto de entrada de la app es la clase LaberintoGUI pues es la que contiene el metodo estatico main que le indica a la JVM como debe compilar el codigo. Ademas de contar con una depencia directa a las librerias de java swing, awt, utils, io.
+
+//TODO: Agregar el mapa de modulos
+
+- *Funciones Observables:*
+  - Hallar Solucion: Se encarga de Ejecutar la logica necesaria para hallar la solucion de un laberinto en especifico. Es iniciada por el usuario por medio de la Interfaz grafica.
+  - Animar Recorrido: Se encarga de gestionar la logica relacionada con una animacion que se muestra en la GUI. Es un proceso interno que solo ocurre si el usuario tiene la opcion activada.
+  - Modificar el laberinto: Se encarga de gestionar la logica relacionada con la modificacion del esquema del laberinto, tal como modificar el estado de una casilla para transformarla de un bloqueo o muro a una libre y viceversa, limpiar el recorrido realizado, y limpiar completamente el laberinto. Es una accion que debe ser lanzada por el usuario por medio de la interfaz grafica.
+  - Mostrar informacion: Se encarga de Mostrar en la GUI informacion relevante con la solucion realizada, desde listar los pasos mostrar el costo en pasos de la solucion, mostrar informacion relevante con los nodos.
