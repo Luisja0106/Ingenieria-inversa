@@ -185,3 +185,21 @@ Este paquete parece contener toda la logica relacionada con acciones y comportam
 #archivo("Problem:")[
   Parece modelar el problema en cuestion, pues se encarga de mostrar y resolver el laberinto, necesita como atributos el estado incial, la lista de acciones, y el objectivo final.
 ]
+==== queue:
+Parece ser un directorio con una gran cantidad de listas anidadas desde colas (LIFO) hasta stack (FIFO) el archivo destacado seria la interfaz Queue y el resto son simplemente implementaciones del contrato que define:
+
+#archivo("Queue:")[
+  Es una interfaz que parece definir el contrato basico de cualquier lista anidada, add, remove, get, isEmpty y size.
+]
+
+==== search:
+Parece contener multiples metodos o formas de realizar buesquedas de soluciones para el laberinto, los archivos destacados son:
+#archivo("Search:")[
+  Es una interfaz que define el contrato que deben cumplir todos los metodos o formas de buscar solucion en el laberinto. Los cuales son: findSolution y findAllSolutions.
+]
+#archivo("NodeComparator")[
+  Clase abstracta que implementa la interfaz Comparator del paquete java.utils, se encarga de definir los atributos y metodos que deben cumplir los diferentes comparadores.
+]
+
+=== En Resumen:
+- El punto de entrada de la app es la clase LaberintoGUI pues es la que contiene el metodo estatico main que le indica a la JVM como debe compilar el codigo. Ademas de contar con una depencia directa a las librerias de java swing, awt, utils, io.
