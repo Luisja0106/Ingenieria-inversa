@@ -218,9 +218,25 @@ parece que la Profundida Iterativa y Profundiad Limitada al usarse cuentan con u
 Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de color negro son muros o bloqueos, los bloques amarillos son casillas libres, el bloque rojo es la salida, y el bloque azul la meta, al iniciar la busqueda se hace un camino de solucion de color gris.
 #v(1em)
 
+- La GUI cuenta con varios botones y secciones:
+  - *Tipo de búsqueda:* Cuenta con varios radio buttons con los modos de búsqueda disponibles ya descritos anteriormente.
+  - *El laberinto:* La grilla del laberinto con los bloques ya mencionados. Al hacer click en algún bloque hace toggle entre un bloque libre (amarillo) y uno negro (muro); sin embargo, esto no funciona con los bordes de la grilla que siempre son negros, ni con la meta y la salida, que se mantienen fijas.
+  - *Zona de botones:*
+    - *Botón Buscar:* Es el botón que inicia la secuencia donde se busca la salida. Cuando la secuencia se está ejecutando cambia al botón 'Detener'.
+    - *Botón Detener:* Botón que detiene la secuencia en seco. Cuando la secuencia es detenida cambia de nuevo al botón 'Buscar'.
+    - *Botón Pausar:* Parece ser un botón para detener la secuencia y permitir reanudarla. Al hacer click hace toggle a 'Reanudar', pero no parece funcionar y muestra diferentes problemas en la terminal.
+    - *Botón Limpiar solución:* Limpia el camino de la solución para volver a intentar. Si se presiona mientras se ejecuta la búsqueda borra el camino gris recorrido hasta ese momento, pero no detiene la secuencia.
+    - *Botón Borrar laberinto:* Borra todos los bloques dejando solo bloques libres (amarillos), a excepción de los bordes y los bloques de meta y salida. Al presionarlo mientras se ejecuta el programa no interrumpe el recorrido, pero sí borra todos los bloques en pantalla; esto parece indicar que la ruta óptima se calcula antes de mostrarla en pantalla y no mientras se va recorriendo.
+  - *Zona inferior de resultados:* Muestra los resultados de la búsqueda, entre ellos:
+    - *Found solution:* Parece ser un booleano que indica si se halló una posible solución.
+    - *Array de direcciones:* Un array con la secuencia de direcciones en texto plano.
+    - *Coste:* Parece ser el número total de casillas recorridas.
+    - *Objeto final:* Parece ser un objeto que contiene el tiempo en milisegundos, junto con los enteros de 'Nodes generated', 'Nodes pending' y 'Nodes Visited'.
+  - *Sección de animación:* Cuenta con un toggle button que al desactivarse no hace la animación de pintar la solución paso a paso sino que la muestra de forma instantánea, además de un slider para ajustar la velocidad. Al desactivar la animación el tiempo en ms pasa a ser menor, lo que parece indicar que es el tiempo de ejecución y no solo de cálculo.
+  - *Botón spinner:* Un spinner button que va desde 1 hasta 100, disponible únicamente cuando el modo de búsqueda es Profundidad limitada o Profundidad iterativa.
+  - *Combo box con laberintos:* Un combo box con diferentes opciones ('Default City', 'New york City', 'Chicago City', 'Bruxules City', 'London City', 'Worcralw city'). Al seleccionar una cambia el diseño del laberinto, manteniendo siempre el tamaño de 15x10, los bordes como muros y las posiciones fijas de entrada (1x3) y salida (15x8). Los cambios realizados se mantienen persistentes al cambiar entre laberintos, pero al reiniciar la app se reinician los cambios.
 
-
-
+#pagebreak()
 
 === En Resumen:
 #v(1em)
@@ -228,8 +244,16 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
 
 //TODO: Agregar el mapa de modulos
 
+#v(1em)
 - *Funciones Observables:*
   - Hallar Solucion: Se encarga de Ejecutar la logica necesaria para hallar la solucion de un laberinto en especifico. Es iniciada por el usuario por medio de la Interfaz grafica.
   - Animar Recorrido: Se encarga de gestionar la logica relacionada con una animacion que se muestra en la GUI. Es un proceso interno que solo ocurre si el usuario tiene la opcion activada.
   - Modificar el laberinto: Se encarga de gestionar la logica relacionada con la modificacion del esquema del laberinto, tal como modificar el estado de una casilla para transformarla de un bloqueo o muro a una libre y viceversa, limpiar el recorrido realizado, y limpiar completamente el laberinto. Es una accion que debe ser lanzada por el usuario por medio de la interfaz grafica.
-  - Mostrar informacion: Se encarga de Mostrar en la GUI informacion relevante con la solucion realizada, desde listar los pasos mostrar el costo en pasos de la solucion, mostrar informacion relevante con los nodos.
+  - Mostrar informacion: Se encarga de Mostrar en la GUI informacion relevante con la solucion realizada, desde listar los pasos mostrar el costo en pasos de la solucion, mostrar informacion relevante con los nodos. Es un proceso Interno.
+  - Movimiento: Se encarga de toda la logica relacionada para realizar movimiento necesario para llegar a la solucion. Es un proceso interno.
+
+#v(1em)
+- *Incertidumbres:*
+  - No es claro como es el flujo de acciones del sistema, es decir se sabe mas o menos quien inicia el sistema y las responsabilidades de cada pieza, sin embargo es complicado de explicar o evidenciar como es el flujo que lleva a cabo el sistema para llevar a cabo una accion.
+  - Como funcionan los metodos de busqueda, es claro cual es su objectivo pero es complejo y algo abstracto ser capaz de ver y evidenciar como funcionan realmente, que clase de logica utilizan y por que si todos hacen lo mismo sus resultados son tan diferentes.
+  - Por que existen tantas listas anidadas, todas realizan lo mismo, pero simplemente viendo el codigo no es claro evidenciar por que se necesitan tantas, y simplemente ejecutando el sistema sin depurar no es claro ver que tipo de lista anidad esta usandose.
