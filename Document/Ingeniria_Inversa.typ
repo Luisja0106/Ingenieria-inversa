@@ -356,4 +356,18 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
   columns: (1fr, 1.2fr, 1.2fr, 1.5fr),
   align: (x, y) => if (y == 0 or x == 0) { center + horizon } else { left + top },
   table.header([*Patron Encontrado*], [*Evidencia en el proyecto*], [*Motivo*], [*Conclusion*]),
+  [*Facade*],
+  [Archivo Solucion],
+  [Esconde toda la logica de diferentes zonas, haciendo que imprimir todas las metricas e informacion relacionada con la solucion sean mucho mas facil de ver y utilizar.],
+  [Parcial, Aunque es verdad que contiene esta funcion, no contiene ni ejecuta logica pesada, guarda la informacion en variables y simplemente la imprime.],
+
+  [*Factory Method*],
+  [Metodo Set del archivo Problem.],
+  [Maneja la creacion del objeto por fuera del constructor nativo.],
+  [No sustentado, No aplica ninguna logica de validacion o de reglas de negocio, termina siendo igual que un constructor corriente],
+
+  [*Mediator*],
+  [Metodo run de MainThread],
+  [Centraliza y organiza las acciones de una accion como lo es busqcar una solucion dentro de un metodo, sin embargo tambien crea acoplamiento.],
+  [Presente, Aunque cree acoplamiento el patron esta bien implementado, el problema del acoplamiento es un error de diseño no del patron.],
 )
