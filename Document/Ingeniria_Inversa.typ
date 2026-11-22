@@ -324,7 +324,21 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
   caption: [Diagrama de Casos de Uso del sistema],
 )
 #v(2em)
+=== Diagrama de Clases de Uso
+#v(1em)
 #figure(
   image("assets/UMLs/Clases.png"),
   caption: [Diagrama de Clases del sistema],
+)
+#v(2em)
+=== Diagramas de Secuencia
+#v(1em)
+#figure(
+  image("assets/UMLs/Secuencia-1.png"),
+  caption: [Diagrama de Secuencias del sistema, caso de busqueda de solucion],
+)
+#v(2em)
+#figure(
+  image("assets/UMLs/Secuencia-2.drawio.png"),
+  caption: [Diagrama de Secuencias del sistema, caso de busqueda de clickear una casilla para cambiar su estado],
 )
