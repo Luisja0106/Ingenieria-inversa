@@ -309,3 +309,22 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
   [Se debe detener el proceso de busqueda de una solucion de dos maneras diferentes, se debe poder pausar y reanudar el proceso de animacion de mostrar la solucion en la GUI, tambien se debe poder cancelar el proceso de analsis y busqueda de solucion del laberinto.],
 )
 
+#pagebreak()
+
+
+== Artefactos de Diseño
+
+#v(1em)
+
+=== Diagrama de Casos de Uso
+
+#v(1em)
+#figure(
+  image("assets/UMLs/casos de uso.png"),
+  caption: [Diagrama de Casos de Uso del sistema],
+)
+#v(2em)
+#figure(
+  image("assets/UMLs/Clases.png"),
+  caption: [Diagrama de Clases del sistema],
+)
