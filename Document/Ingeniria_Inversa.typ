@@ -342,3 +342,18 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
   image("assets/UMLs/Secuencia-2.drawio.png"),
   caption: [Diagrama de Secuencias del sistema, caso de busqueda de clickear una casilla para cambiar su estado],
 )
+#v(2em)
+=== Diagrama de Actividad
+#v(1em)
+#figure(
+  image("assets/UMLs/Actividades.png"),
+  caption: [Diagrama de Actividades, caso de busqueda de solucion],
+)
+#v(2em)
+=== Patrones de Diseño
+#v(1em)
+#table(
+  columns: (1fr, 1.2fr, 1.2fr, 1.5fr),
+  align: (x, y) => if (y == 0 or x == 0) { center + horizon } else { left + top },
+  table.header([*Patron Encontrado*], [*Evidencia en el proyecto*], [*Motivo*], [*Conclusion*]),
+)
