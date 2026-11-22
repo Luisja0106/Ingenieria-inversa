@@ -268,3 +268,44 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
 
 
 == Especificacion Funcional Recuperada
+
+#table(
+  columns: (0.5fr, 1fr, 1.2fr, 1.5fr),
+  align: (x, y) => if (y == 0 or x == 0) { center + horizon } else { left + top },
+  table.header([*ID*], [*Comportamiento \ Recuperado*], [*Evidencia en Codigo*], [*Criterio Observable*]),
+  [*RF-R01*],
+  [Cambiar el tipo de una casilla.],
+  [Laboratorio.actualizarCasilla()],
+  [Se debe poder cambiar el estado de una casilla para hacer que sea un espacio libre o un muro o bloqueo, se utiliza en metodos como panelTablero.mouseClicked, Laberinto.restart, Laberinto.actualizarCasilla y Laberinto.LabVacio.],
+
+  [*RF-R02*],
+  [Encontrar la solucion al laberinto siempre y cuando sea posible.],
+  [Problem.solve()],
+  [Debe poder encontrarse una solucion al laberinto siempre y cuando sea posible, en caso de no ser posible debe notificarse. Se debe poder encontrar utilizando uno de varios metodos de busqueda de solucion.],
+
+  [*RF-R03*],
+  [Mostrar informacion relevante a la solucion encontrada],
+  [Solution.toString()],
+  [Debe mostrarse informacion importante con respecto a la solucion encontrada, tal como si se encontro la solucion, los pasos y acciones realizadas en dicha solucion, el coste de casillas de la solucion, el estado final de la casilla al momento de encontrar la solucion, y las metricas relacionada a la solucion.],
+
+  [*RF-R04*],
+  [Mostrar de forma grafica el tablero],
+  [PanelTablero.paint()],
+  [Debe mostrarse de forma grafica el tablero siguiendo el mismo esquema que Laberinto, es decir que si laberinto cambia su esquema o tiene varios esquemas o grillas intercamabiables estas siempre seran la fuente de la verdad que debera seguir el tablero grafico.],
+
+  [*RF-R05*],
+  [Mostrar de forma grafica la solucion en el tablero grafico],
+  [Laberinto.dibujaSolucion()],
+  [Se debe mostrar de forma clara y consisa la solucion del laberinto realizada por el metodo de solucion seleccionado de forma grafica.],
+
+  [*RF-R06*],
+  [Se debe poder animar el proceso de solucion en el tablero grafico],
+  [Laberinto.dibujaSolucion()],
+  [Se debe poder activar y desactivar una animacion del laberinto siendo resuelto, ademas de poder seleccionar la velocidad de la misma, eso si no debe interferir y debe ser completamente independiente al proceso de analizar y buscar la solucion.],
+
+  [*RF-R07*],
+  [Pausar e interrumpir el proceso de busqueda de solucion de un tipo de busqueda en especifico],
+  [LaberintoGUI. \ bot_DetenerActionPerformed()],
+  [Se debe detener el proceso de busqueda de una solucion de dos maneras diferentes, se debe poder pausar y reanudar el proceso de animacion de mostrar la solucion en la GUI, tambien se debe poder cancelar el proceso de analsis y busqueda de solucion del laberinto.],
+)
+
