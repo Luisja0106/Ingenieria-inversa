@@ -242,9 +242,14 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
 #v(1em)
 - El punto de entrada de la app es la clase LaberintoGUI pues es la que contiene el método estático main que le indica a la JVM cómo debe compilar el código. Además de contar con una dependencia directa a las librerías de java swing, awt, utils, io.
 
-//TODO: Agregar el mapa de módulos
+#v(4em)
 
-#v(1em)
+#figure(
+  image("assets/Modulos.drawio.png"),
+  caption: [Diagrama de modulos del sistema],
+)
+
+#pagebreak()
 - *Funciones Observables:*
   - Hallar Solución: Se encarga de ejecutar la lógica necesaria para hallar la solución de un laberinto en específico. Es iniciada por el usuario por medio de la interfaz gráfica.
   - Animar Recorrido: Se encarga de gestionar la lógica relacionada con una animación que se muestra en la GUI. Es un proceso interno que solo ocurre si el usuario tiene la opción activada.
@@ -257,3 +262,9 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
   - No es claro cómo es el flujo de acciones del sistema, es decir, se sabe más o menos quién inicia el sistema y las responsabilidades de cada pieza, sin embargo, es complicado de explicar o evidenciar cómo es el flujo que lleva a cabo el sistema para llevar a cabo una acción.
   - Cómo funcionan los métodos de búsqueda, es claro cuál es su objetivo pero es complejo y algo abstracto ser capaz de ver y evidenciar cómo funcionan realmente, qué clase de lógica utilizan y por qué si todos hacen lo mismo sus resultados son tan diferentes.
   - Por qué existen tantas listas anidadas, todas realizan lo mismo, pero simplemente viendo el código no es claro evidenciar por qué se necesitan tantas, y simplemente ejecutando el sistema sin depurar no es claro ver qué tipo de lista anidada está usándose.
+
+
+#pagebreak()
+
+
+== Especificacion Funcional Recuperada
