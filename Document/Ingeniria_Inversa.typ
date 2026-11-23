@@ -324,7 +324,7 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
   caption: [Diagrama de Casos de Uso del sistema],
 )
 #v(2em)
-=== Diagrama de Clases de Uso
+=== Diagrama de Clases
 #v(1em)
 #figure(
   image("assets/UMLs/Clases.png"),
@@ -346,7 +346,7 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
 === Diagrama de Actividad
 #v(1em)
 #figure(
-  image("assets/UMLs/Actividades.png"),
+  image("assets/UMLs/Actividades-pre-modificaciones.png"),
   caption: [Diagrama de Actividades, caso de busqueda de solucion],
 )
 #v(2em)
@@ -370,4 +370,33 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
   [Metodo run de MainThread],
   [Centraliza y organiza las acciones de una accion como lo es busqcar una solucion dentro de un metodo, sin embargo tambien crea acoplamiento.],
   [Presente, Aunque cree acoplamiento el patron esta bien implementado, el problema del acoplamiento es un error de diseño no del patron.],
+)
+
+
+== Evidencias de Comprension
+
+=== Busqueda que encuentra solucion:
+
+Busqueda de solucion con el metodo profundidad, animacion activada con su velocidad por defecto en el laberinto por defecto. Primero tras hacer click en el boton el software o sistema debe crear una instancia del MainThread y este a su vez empezara bloqueando la GUI para evitar modificaciones mientras se ejecuta la busqueda, se creara una instancia de problem utilizando el metodo de profundidad, el metodo de profundidad buscara la solucion utilizando el arbol binario, una vez encontrado creara una instancia desolution y la retornara, MainThread obtendra dicha instancia y llamara al metodo dibujar solucion de Laberinto, laberinto notara que el boton de animacion esta activo con su velocidad por defecto asi animara el proceso de solucion en la GUI, mientras esto sucede el MainThread imprimira la solution en el jtext area de la GUI.
+
+=== Busqueda que no encuentra solucion:
+
+Busqueda de solucion con el metodo profundidad, animacion activada con su velocidad por defecto en el laberinto por defecto con una pequña modificacion en la casilla antes de la meta, pues esta estara bloquedada siendo inecesible. El proceso sera igual que el anterior hasta el punto donde se llama al metodo solve del problema, este al intentar resolverlo y notar que la solucion es imposible retornara un mensaje de error.
+
+
+=== Cambios Realizados despuese de ver la ejecucion:
+
+Tras ver la ejecucion de ambos casos se noto que:
+1. El proceso de pintado con animacion es iterativo.
+2. El sistema no tiene un mensaje especial o especifico para cuando no se puede solucionar el laberinto, simplemente en la solucion retorna el boleano de gotSolution: false.
+
+
+#figure(
+  image("assets/UMLs/Secuencia-1-modificado.png"),
+  caption: [Diagrama de secuencia tras revision],
+)
+
+#figure(
+  image("assets/UMLs/Actividades.png"),
+  caption: [Diagrama de Actividades despues de las modificaciones, caso de busqueda de solucion],
 )
