@@ -195,14 +195,9 @@ func (a *App) handleStop() {
 
 func (a *App) handleReset() {
 	a.Runner.Stop()
-	defaultB := board.DefaultBoard()
-	a.Board.Rows = defaultB.Rows
-	a.Board.Cols = defaultB.Cols
-	a.Board.Start = defaultB.Start
-	a.Board.Goal = defaultB.Goal
-	a.Board.Cells = defaultB.Cells
-
-	a.BoardView.RefreshAll()
+	a.Board = board.DefaultBoard()
+	a.Runner.SetBoard(a.Board)
+	a.BoardView.LoadBoard(a.Board)
 	a.ControlPanel.SetSearchingState(false)
 	a.MetricsPanel.Reset()
 }

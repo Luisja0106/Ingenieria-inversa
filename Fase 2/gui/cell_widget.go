@@ -50,13 +50,15 @@ type CellWidget struct {
 	b     *board.Board
 	rect  *canvas.Rectangle
 	onTap func(pos board.Position)
+	size  fyne.Size
 }
 
 // NewCellWidget creates an interactive cell tied to a position on the board.
-func NewCellWidget(pos board.Position, b *board.Board, onTap func(pos board.Position)) *CellWidget {
+func NewCellWidget(pos board.Position, b *board.Board, size fyne.Size, onTap func(pos board.Position)) *CellWidget {
 	cw := &CellWidget{
 		pos:   pos,
 		b:     b,
+		size:  size,
 		onTap: onTap,
 	}
 
@@ -98,6 +100,9 @@ func (r *cellWidgetRenderer) Layout(size fyne.Size) {
 }
 
 func (r *cellWidgetRenderer) MinSize() fyne.Size {
+	if r.widget.size.Width > 0 && r.widget.size.Height > 0 {
+		return r.widget.size
+	}
 	return fyne.NewSize(28, 28)
 }
 

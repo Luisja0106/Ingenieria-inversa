@@ -52,6 +52,13 @@ func NewRunner(b *board.Board) *Runner {
 	}
 }
 
+// SetBoard rebinds the runner to a new or updated board instance.
+func (r *Runner) SetBoard(b *board.Board) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	r.board = b
+}
+
 // GetStatus returns the current execution status.
 func (r *Runner) GetStatus() Status {
 	r.mu.Lock()

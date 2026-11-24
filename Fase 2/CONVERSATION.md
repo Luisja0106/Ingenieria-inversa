@@ -125,3 +125,24 @@ I have updated the board dimensions to **10 rows and 15 columns**:
 3. **Verification**: Added `TestDefaultBoardDimensions` in [board/board_test.go](board/board_test.go), verified all unit tests pass, and recompiled `bin/maze-solver`.
 
 Would you like to launch the GUI application now?
+
+## Turn 6
+
+### User
+```text
+Now, I saw that the board and the GUI have to be modified both to actually chang the size and the form of the board, that is a mistake, couldn't you make that the board file is the just and only truth source, the GUI shouldn't care about that it just should show the info that recives from the board.
+```
+
+### Assistant
+You are completely right. Having both the board domain and the GUI coupled to dimension assumptions was an architectural flaw that violated the **Single Source of Truth (SSOT)** principle.
+
+I verified the code and refactored the design to make `board.Board` the exclusive source of truth:
+
+1. **Reactive BoardView**: Implemented `LoadBoard(b *board.Board)` in [gui/board_view.go](gui/board_view.go). The GUI now inspects `b.Rows` and `b.Cols` dynamically, calculates responsive cell dimensions based on grid density, updates the Fyne column layout (`layout.NewGridLayoutWithColumns(b.Cols)`), and re-binds all widgets automatically.
+2. **Dynamic Cell Scaling**: Updated [gui/cell_widget.go](gui/cell_widget.go) so cells scale responsively without fixed pixel assumptions.
+3. **Re-binding Runner**: Added `SetBoard(b *board.Board)` in [solver/runner.go](solver/runner.go) and refactored `handleReset()` in [gui/app.go](gui/app.go) to pass new board instances directly to `LoadBoard`.
+4. **Automated Verification**: Added `TestBoardViewSingleSourceOfTruth` in [gui/board_view_test.go](gui/board_view_test.go), verifying that loading 10x15, 6x20, and 30x8 boards adapts the widget matrix and container objects dynamically with 100% test pass.
+
+Now you can change the dimensions or shape in [board/board.go](board/board.go) alone, and the GUI will adapt seamlessly without touching a single line of UI code.
+
+Would you like to run the application now to verify the visual presentation?
