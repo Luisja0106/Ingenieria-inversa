@@ -539,3 +539,19 @@ Tras ver la ejecucion de ambos casos se noto que:
   caption: "Evidencia del CP-06",
 ) <fig-cp-06>
 
+#pagebreak()
+
+= Fase 3: Contraste Critico Y trazabilidad
+
+#table(
+  columns: (1fr, 1fr, 0.8fr, 1fr, 1fr),
+  align: (x, y) => if (y == 0 or x == 0) { center + horizon } else { left + top },
+  table.header(
+    [*Requistio \ Recuperado*],
+    [*Evidencia en Java*],
+    [*Artefacto de \ Diseño*],
+    [*Modulo de la Nueva applicacion*],
+    [*Prueba*],
+  ),
+  [],
+)
