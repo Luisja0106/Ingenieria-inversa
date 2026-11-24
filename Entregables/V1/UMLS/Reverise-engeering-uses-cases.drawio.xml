@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="6kARBoEM_vNyUx3hYFkE">
+    <mxGraphModel dx="1673" dy="968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LkqYCFji-iSkPotDw-9z-1" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;nbsp; &amp;nbsp; " vertex="1">
+          <mxGeometry height="520" width="620" x="140" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=33;" value="Laberinto" vertex="1">
+          <mxGeometry height="60" width="240" x="340" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-17" edge="1" parent="1" source="LkqYCFji-iSkPotDw-9z-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" target="LkqYCFji-iSkPotDw-9z-7">
+          <mxGeometry relative="1" x="0.3529" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-19" edge="1" parent="1" source="LkqYCFji-iSkPotDw-9z-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" target="LkqYCFji-iSkPotDw-9z-18">
+          <mxGeometry relative="1" x="0.2727" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-23" edge="1" parent="1" source="LkqYCFji-iSkPotDw-9z-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" target="LkqYCFji-iSkPotDw-9z-22">
+          <mxGeometry relative="1" x="0.1429" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-4" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;labelPerimeter=1;" value="Usuario" vertex="1">
+          <mxGeometry height="190" width="120" x="-20" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-11" edge="1" parent="1" source="LkqYCFji-iSkPotDw-9z-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;dashed=1;dashPattern=12 12;" target="LkqYCFji-iSkPotDw-9z-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-12" connectable="0" parent="LkqYCFji-iSkPotDw-9z-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="&amp;lt;&amp;lt;Include&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0198" y="-2" as="geometry">
+            <mxPoint x="1" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Solucionar Laberinto" vertex="1">
+          <mxGeometry height="70" width="140" x="180" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Buscar Solucion" vertex="1">
+          <mxGeometry height="70" width="140" x="390" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-13" edge="1" parent="1" source="LkqYCFji-iSkPotDw-9z-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;dashed=1;dashPattern=12 12;" target="LkqYCFji-iSkPotDw-9z-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-16" connectable="0" parent="LkqYCFji-iSkPotDw-9z-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="&amp;lt;&amp;lt;Extend&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.2706" y="-2" as="geometry">
+            <mxPoint x="-13" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-9" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Imprimir Solucion" vertex="1">
+          <mxGeometry height="70" width="140" x="600" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-14" edge="1" parent="1" source="LkqYCFji-iSkPotDw-9z-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.964;entryY=0.616;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;dashed=1;dashPattern=8 8;entryPerimeter=0;" target="LkqYCFji-iSkPotDw-9z-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-15" connectable="0" parent="LkqYCFji-iSkPotDw-9z-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="&amp;lt;&amp;lt;Extend&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1069" y="-3" as="geometry">
+            <mxPoint x="23" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Imprimir Error" vertex="1">
+          <mxGeometry height="70" width="140" x="600" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-18" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Modificar Laberinto" vertex="1">
+          <mxGeometry height="70" width="140" x="180" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-20" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Seleccionar Método de búsqueda de solucion" vertex="1">
+          <mxGeometry height="70" width="140" x="180" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-21" edge="1" parent="1" source="LkqYCFji-iSkPotDw-9z-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;endArrow=none;endFill=0;" target="LkqYCFji-iSkPotDw-9z-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LkqYCFji-iSkPotDw-9z-22" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Seleccionar Laberinto" vertex="1">
+          <mxGeometry height="70" width="140" x="170" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
