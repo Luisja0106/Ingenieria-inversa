@@ -111,11 +111,11 @@
   #v(0.4em)
   #text(size: 9pt, weight: "bold", fill: luma(80))[ANÁLISIS Y DISEÑO DE SISTEMAS II]
   #v(0.3em)
-  #text(size: 17pt, weight: "bold", fill: luma(10))[Taller Ingeniería Inversa V1]
+  #text(size: 17pt, weight: "bold", fill: luma(10))[Taller Ingeniería Inversa V2]
   #v(0.25em)
   #text(size: 10pt, fill: luma(60))[Luis Javier Pérez]
   #v(0.1em)
-  #text(size: 10pt, fill: luma(60))[2026-11-22]
+  #text(size: 10pt, fill: luma(60))[2026-11-24]
   #line(length: 100%, stroke: 0.5pt + luma(180))
   #v(0.8em)
 ]
@@ -401,3 +401,7 @@ Tras ver la ejecucion de ambos casos se noto que:
   image("assets/UMLs/Actividades.png"),
   caption: [Diagrama de Actividades despues de las modificaciones, caso de busqueda de solucion],
 )
+
+#pagebreak()
+
+= Fase 2: Ingeniería Directa con IA (Vibe-Coding)
