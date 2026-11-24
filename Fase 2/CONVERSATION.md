@@ -109,3 +109,19 @@ I have implemented the complete Maze Search Solver following Screaming Architect
 - The binary builds cleanly to `bin/maze-solver`.
 
 Would you like to run the GUI application now to test the maze solver interactively?
+
+## Turn 5
+
+### User
+```text
+Nice, almost perfect make that the board be 15 columns and 10 rows
+```
+
+### Assistant
+I have updated the board dimensions to **10 rows and 15 columns**:
+
+1. **Board Configuration**: Set `DefaultRows = 10` and `DefaultCols = 15` in [board/board.go](board/board.go).
+2. **Preset Maze Layout**: Re-positioned the default goal to `(8, 13)` and adjusted obstacle walls in [board/board.go](board/board.go) to provide an engaging, solvable labyrinth across the 10x15 grid.
+3. **Verification**: Added `TestDefaultBoardDimensions` in [board/board_test.go](board/board_test.go), verified all unit tests pass, and recompiled `bin/maze-solver`.
+
+Would you like to launch the GUI application now?

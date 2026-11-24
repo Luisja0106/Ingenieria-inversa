@@ -4,7 +4,7 @@ import "fmt"
 
 // Default grid dimensions
 const (
-	DefaultRows = 15
+	DefaultRows = 10
 	DefaultCols = 15
 )
 
@@ -52,20 +52,21 @@ func NewBoard(rows, cols int) *Board {
 func DefaultBoard() *Board {
 	b := NewBoard(DefaultRows, DefaultCols)
 	b.Start = Position{Row: 1, Col: 1}
-	b.Goal = Position{Row: 13, Col: 13}
+	b.Goal = Position{Row: 8, Col: 13}
 
-	// Preset wall layout for an interesting, solvable labyrinth
+	// Preset wall layout for an interesting, solvable labyrinth (10 rows x 15 columns)
 	wallCoordinates := []Position{
-		// Border walls with gaps
-		{Row: 0, Col: 5}, {Row: 1, Col: 5}, {Row: 2, Col: 5}, {Row: 3, Col: 5}, {Row: 4, Col: 5},
-		{Row: 6, Col: 1}, {Row: 6, Col: 2}, {Row: 6, Col: 3}, {Row: 6, Col: 4}, {Row: 6, Col: 5},
-		{Row: 2, Col: 8}, {Row: 3, Col: 8}, {Row: 4, Col: 8}, {Row: 5, Col: 8}, {Row: 6, Col: 8},
-		{Row: 8, Col: 5}, {Row: 8, Col: 6}, {Row: 8, Col: 7}, {Row: 8, Col: 8}, {Row: 8, Col: 9},
-		{Row: 10, Col: 2}, {Row: 10, Col: 3}, {Row: 10, Col: 4}, {Row: 10, Col: 5},
-		{Row: 10, Col: 8}, {Row: 10, Col: 9}, {Row: 10, Col: 10}, {Row: 10, Col: 11},
-		{Row: 11, Col: 8}, {Row: 12, Col: 8}, {Row: 13, Col: 8},
-		{Row: 4, Col: 11}, {Row: 5, Col: 11}, {Row: 6, Col: 11}, {Row: 7, Col: 11},
-		{Row: 1, Col: 12}, {Row: 2, Col: 12},
+		// Column 4 vertical obstacle (pass below at rows 7, 8, 9)
+		{Row: 0, Col: 4}, {Row: 1, Col: 4}, {Row: 2, Col: 4}, {Row: 3, Col: 4}, {Row: 4, Col: 4}, {Row: 5, Col: 4}, {Row: 6, Col: 4},
+
+		// Column 7 vertical obstacle (pass above at rows 0, 1, 2)
+		{Row: 3, Col: 7}, {Row: 4, Col: 7}, {Row: 5, Col: 7}, {Row: 6, Col: 7}, {Row: 7, Col: 7}, {Row: 8, Col: 7}, {Row: 9, Col: 7},
+
+		// Column 10 vertical obstacle (pass below at rows 7, 8, 9)
+		{Row: 0, Col: 10}, {Row: 1, Col: 10}, {Row: 2, Col: 10}, {Row: 3, Col: 10}, {Row: 4, Col: 10}, {Row: 5, Col: 10}, {Row: 6, Col: 10},
+
+		// Horizontal/vertical branch obstacle around column 12
+		{Row: 4, Col: 12}, {Row: 5, Col: 12}, {Row: 6, Col: 12},
 	}
 
 	b.Clear()

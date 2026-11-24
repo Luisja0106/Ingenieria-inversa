@@ -2,6 +2,19 @@ package board
 
 import "testing"
 
+func TestDefaultBoardDimensions(t *testing.T) {
+	b := DefaultBoard()
+	if b.Rows != 10 {
+		t.Errorf("expected 10 rows, got %d", b.Rows)
+	}
+	if b.Cols != 15 {
+		t.Errorf("expected 15 cols, got %d", b.Cols)
+	}
+	if !b.InBounds(b.Start) || !b.InBounds(b.Goal) {
+		t.Errorf("start %v or goal %v out of bounds", b.Start, b.Goal)
+	}
+}
+
 func TestNewBoard(t *testing.T) {
 	b := NewBoard(10, 10)
 	if b.Rows != 10 || b.Cols != 10 {
