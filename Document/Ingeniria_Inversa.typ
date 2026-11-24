@@ -455,3 +455,87 @@ Tras ver la ejecucion de ambos casos se noto que:
 1. Que se muestre una animacion de los nodos siendo recorridos, La IA dio por hecho que el usuario quiere evidenciar como el sistema recorre el tablero en busca de la solucion antes de hacer la animacion del agente realmente solucionando el laberinto. Dado a que no afecta directamente al funcionamiento del sistema y de hecho mejora la UX se decidio aceptar el cambio mas aun teniendo en cuenta que se puede desactivar en cualquier momento.
 #v(1em)
 2. Que el usuario pueda seleccionar y cambiar la posicion de la meta y salida, La IA dio por hecho que la feature de cambiar el estado o tipo de una casilla tambien se aplicaba para las casillas de salida y meta a diferencia de solo cambiar entre muro y libre, dado que en el codigo de java hay indicios de que eso queria ser una feature pues el archivo laberinto tiene ese caso previsto en su metodo de actualizarCasilla pero la UI no lo permite, se decidio dejar pues tambien mejora la UX y expande el funcionamiento del sistema sin modificar su proposito original.
+
+#pagebreak()
+== Pruebas Comparativas:
+#table(
+  columns: (0.5fr, 0.8fr, 1fr, 1fr, 1fr, 0.8fr),
+  align: (x, y) => if (y == 0 or x == 0) { center + horizon } else { left + top },
+  table.header(
+    [*Caso*],
+    [*Entrada \ / Escenario*],
+    [*Resultado \ Esperado*],
+    [*Java Original*],
+    [*Nueva Version(Go)*],
+    [*Evidencia*],
+  ),
+  [*CP-01*],
+  [Ruta simple],
+  [Se encuentra la solucion y se muestra la informacion relacionada a la misma],
+  [Muestra el resultado directamente asi como las metricas relacionadas],
+  [Muestra el resultado, las metricas igual que el original pero ademas muestra los nodos recorridos para llegar a la solucion.],
+  [Figura 9],
+
+  [*CP-02*],
+  [Obstaculo que obliga desvio],
+  [Se hace el desvio dependiendo del tipo de metodo de busqueda que se tenga seleccionado.],
+  [Hace el desvio y muestra la solucion junto a sus respectivas metricas],
+  [Al igual que el original hace el desvio, pero al igual que el CP anterior muestra los nodos visitados para hallar la solucion.],
+  [Figura 10],
+
+  [*CP-03*],
+  [Ausencia de solucion],
+  [Se muestra que no se encuentra la solucion y no se muestra ningun resultado en el panel del laberinto.],
+  [No muestra nada en el panel propio del laberinto, en la zona de informacion muestra que no pudo encontrar la solucion.],
+  [Indica que su estado es 'Sin Solucion', muestra visualmente que recorrio todo el laberinto usando los nodos en busca de una solucion.],
+  [Figura 11],
+
+  [*CP-04*],
+  [Seleccion de dos algoritmos],
+  [Se cambia la ruta escogida para solucionar el problema],
+  [Muestra dos soluciones diferentes basado en el algoritmo escogido.],
+  [Muestra tambien dos soluciones diferentes, y los nodos necesarios para ellos, ademas aunque se seleccionaron los mismo metodos de busqueda hay una diferencia en la solucion utilizando el metodode busqueda de profundidad entre la solucion que da el programa original (java), y la nueva version (go)],
+  [Figura 12],
+
+  [*CP-05*],
+  [Reinicio],
+  [Se elimina la solucion ya encontrada y se hace una busqueda nuevamente.],
+  [Limpia la solucion anterior y hace busqueda nuevamente de una solucion],
+  [Exactamente lo mismo que la version de original],
+  [Figura 13],
+
+  [*CP-06*],
+  [Borrar la solucion mientras se ejecuta la busqueda],
+  [Que No se permita la limpieza del tablero mientras se ejecuta una solucion.],
+  [Perminte que se haga una limpieza mientras se ejecuta, lo cual deja el camino de solucion llevado a cabo por el agente incompleto],
+  [Bloquea la UI para impedir que se realize cualquier accion mientras se ejecuta la solucion],
+  [Figura 14],
+)
+#pagebreak()
+===== Evidencias
+#v(1em)
+#figure(
+  image("assets/Evidences/CP-01.png"),
+  caption: "Evidencia del CP-01",
+)
+#figure(
+  image("assets/Evidences/CP-02.png"),
+  caption: "Evidencia del CP-02",
+)
+#figure(
+  image("assets/Evidences/CP-03.png"),
+  caption: "Evidencia del CP-03",
+)
+#figure(
+  image("assets/Evidences/CP-04.png"),
+  caption: "Evidencia del CP-04",
+)
+#figure(
+  image("assets/Evidences/CP-05.png"),
+  caption: "Evidencia del CP-05",
+)
+#figure(
+  image("assets/Evidences/CP-06.png"),
+  caption: "Evidencia del CP-06",
+)
+
