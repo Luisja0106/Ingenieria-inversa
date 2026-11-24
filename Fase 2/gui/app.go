@@ -22,14 +22,30 @@ type App struct {
 	BoardView    *BoardView
 	ControlPanel *ControlPanel
 	MetricsPanel *MetricsPanel
+
+	// In-memory runtime persistence
+	activeBoards map[string]*board.Board
+	currentMaze  string
 }
 
-// NewApp initializes all components of the maze application.
+// NewApp initializes all components of the maze application with default Fyne runtime.
 func NewApp() *App {
+	return NewAppWithFyne(app.NewWithID("com.mazesolver.ai"))
+}
+
+// NewAppWithFyne initializes the maze application with a specific fyne.App (useful for tests).
+func NewAppWithFyne(fyneApp fyne.App) *App {
+	initialMaze := "Laberinto 1"
+	defaultBoard := board.DefaultBoard()
+
 	a := &App{
-		FyneApp: app.NewWithID("com.mazesolver.ai"),
-		Board:   board.DefaultBoard(),
+		FyneApp:      fyneApp,
+		Board:        defaultBoard,
+		activeBoards: make(map[string]*board.Board),
+		currentMaze:  initialMaze,
 	}
+
+	a.activeBoards[initialMaze] = defaultBoard
 
 	a.MainWindow = a.FyneApp.NewWindow("Solucionador de Laberintos - IA")
 	a.Runner = solver.NewRunner(a.Board)
@@ -39,6 +55,7 @@ func NewApp() *App {
 
 	// Controls
 	a.ControlPanel = NewControlPanel(
+		a.handleSelectMaze,
 		a.handleResolve,
 		a.handleStop,
 		a.handleReset,
@@ -187,6 +204,36 @@ func (a *App) animateAgentPath(positions []board.Position, delay time.Duration) 
 	}
 }
 
+func (a *App) handleSelectMaze(name string) {
+	if a.Runner.GetStatus() == solver.StatusSearching {
+		return
+	}
+	if name == a.currentMaze && a.Board != nil {
+		return
+	}
+
+	a.Runner.Stop()
+	a.currentMaze = name
+
+	// Retrieve existing modified board or instantiate from blueprint
+	b, exists := a.activeBoards[name]
+	if !exists {
+		bp, found := board.GetBlueprint(name)
+		if found {
+			b = bp.CreateBoard()
+		} else {
+			b = board.DefaultBoard()
+		}
+		a.activeBoards[name] = b
+	}
+
+	a.Board = b
+	a.Runner.SetBoard(a.Board)
+	a.BoardView.LoadBoard(a.Board)
+	a.ControlPanel.SetSearchingState(false)
+	a.MetricsPanel.Reset()
+}
+
 func (a *App) handleStop() {
 	a.Runner.Stop()
 	a.ControlPanel.SetSearchingState(false)
@@ -195,7 +242,15 @@ func (a *App) handleStop() {
 
 func (a *App) handleReset() {
 	a.Runner.Stop()
-	a.Board = board.DefaultBoard()
+	// Reset the active board for current maze back to its pristine blueprint
+	bp, found := board.GetBlueprint(a.currentMaze)
+	if found {
+		a.Board = bp.CreateBoard()
+	} else {
+		a.Board = board.DefaultBoard()
+	}
+	a.activeBoards[a.currentMaze] = a.Board
+
 	a.Runner.SetBoard(a.Board)
 	a.BoardView.LoadBoard(a.Board)
 	a.ControlPanel.SetSearchingState(false)

@@ -53,3 +53,39 @@ func TestBoardViewSingleSourceOfTruth(t *testing.T) {
 		t.Fatalf("expected 240 container objects, got %d", len(bv.Container.Objects))
 	}
 }
+
+func TestAppSessionPersistence(t *testing.T) {
+	testApp := test.NewApp()
+	a := NewAppWithFyne(testApp)
+	if a.currentMaze != "Laberinto 1" {
+		t.Fatalf("expected initial maze to be Laberinto 1, got %s", a.currentMaze)
+	}
+
+	// 1. Mutate cell (2, 1) in Laberinto 1 (initially Free) to Wall
+	testPos := board.Position{Row: 2, Col: 1}
+	if a.Board.Cells[testPos.Row][testPos.Col] != board.CellFree {
+		t.Fatalf("expected cell (2, 1) to be initial Free")
+	}
+	_ = a.Board.SetCell(testPos, board.CellWall)
+
+	// 2. Switch to Laberinto 2
+	a.handleSelectMaze("Laberinto 2")
+	if a.currentMaze != "Laberinto 2" {
+		t.Fatalf("expected current maze to be Laberinto 2")
+	}
+
+	// 3. Switch back to Laberinto 1 and verify changes persisted
+	a.handleSelectMaze("Laberinto 1")
+	if a.currentMaze != "Laberinto 1" {
+		t.Fatalf("expected current maze to be Laberinto 1")
+	}
+	if a.Board.Cells[testPos.Row][testPos.Col] != board.CellWall {
+		t.Errorf("expected modified cell (2, 1) to remain CellWall across maze switch")
+	}
+
+	// 4. Reset current maze and verify it restores to blueprint Free
+	a.handleReset()
+	if a.Board.Cells[testPos.Row][testPos.Col] != board.CellFree {
+		t.Errorf("expected reset to restore cell (2, 1) to CellFree")
+	}
+}

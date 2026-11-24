@@ -82,9 +82,10 @@ func TestClone(t *testing.T) {
 		t.Fatal("dimensions mismatch")
 	}
 
-	// Modify clone and verify original is untouched
-	clone.SetCell(Position{0, 0}, CellWall)
-	if orig.Cells[0][0] == CellWall {
+	// Modify a free cell in clone and verify original is untouched
+	freePos := Position{Row: 2, Col: 1}
+	_ = clone.SetCell(freePos, CellWall)
+	if orig.Cells[freePos.Row][freePos.Col] == CellWall {
 		t.Error("modifying clone affected original board")
 	}
 }

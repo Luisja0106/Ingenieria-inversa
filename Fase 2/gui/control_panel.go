@@ -23,6 +23,7 @@ const (
 // ControlPanel contains the user-interactive buttons and selectors.
 type ControlPanel struct {
 	Container       *fyne.Container
+	MazeSelect      *widget.Select
 	AlgorithmRadio  *widget.RadioGroup
 	EditModeRadio   *widget.RadioGroup
 	SpeedSelect     *widget.Select
@@ -37,12 +38,24 @@ type ControlPanel struct {
 
 // NewControlPanel constructs the controls container.
 func NewControlPanel(
+	onSelectMaze func(name string),
 	onResolve func(),
 	onStop func(),
 	onReset func(),
 	onClear func(),
 ) *ControlPanel {
 	cp := &ControlPanel{}
+
+	// Pre-created Maze Selection (Dropdown Select)
+	mazeNames := board.GetBlueprintNames()
+	cp.MazeSelect = widget.NewSelect(mazeNames, func(selected string) {
+		if onSelectMaze != nil && selected != "" {
+			onSelectMaze(selected)
+		}
+	})
+	if len(mazeNames) > 0 {
+		cp.MazeSelect.SetSelected(mazeNames[0])
+	}
 
 	// Algorithm selection (Radio Buttons)
 	algorithms := []string{
@@ -123,6 +136,9 @@ func NewControlPanel(
 	)
 
 	content := container.NewVBox(
+		widget.NewLabelWithStyle("Laberintos Precreados", fyne.TextAlignLeading, fyne.TextStyle{Bold: true}),
+		cp.MazeSelect,
+		widget.NewSeparator(),
 		widget.NewLabelWithStyle("Algoritmo de Búsqueda", fyne.TextAlignLeading, fyne.TextStyle{Bold: true}),
 		cp.AlgorithmRadio,
 		widget.NewSeparator(),
@@ -145,11 +161,13 @@ func NewControlPanel(
 // SetSearchingState updates button states while search is running or stopped.
 func (cp *ControlPanel) SetSearchingState(searching bool) {
 	if searching {
+		cp.MazeSelect.Disable()
 		cp.ResolveButton.Disable()
 		cp.ResetButton.Disable()
 		cp.ClearButton.Disable()
 		cp.StopButton.Enable()
 	} else {
+		cp.MazeSelect.Enable()
 		cp.ResolveButton.Enable()
 		cp.ResetButton.Enable()
 		cp.ClearButton.Enable()

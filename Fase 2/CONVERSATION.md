@@ -146,3 +146,35 @@ I verified the code and refactored the design to make `board.Board` the exclusiv
 Now you can change the dimensions or shape in [board/board.go](board/board.go) alone, and the GUI will adapt seamlessly without touching a single line of UI code.
 
 Would you like to run the application now to verify the visual presentation?
+
+## Turn 7
+
+### User
+```text
+Nice, now that that's implemented we can make blueprints to for pre-created mazes, add that, in the GUI the user should can choose a maze using her name using a select (like the html tag), lest do that make pre-created boards in his own file and that the user can change the maze using the select, they also can modify the board in the GUI just like now, and the change should remain meanwhile the program is running for example I choose default maze do some changes, change to 2 pre-created maze, and go back to default maze the changes should be visible, but If I close the app the next time that I opened the changes should not be saved, so the default maze should be in his initial state, You should can do that make that each cell has his own state (like a enum) and the pre-created ones would be like a matrix already created with the states. do the images pre-created, where the black box are walls, yellow are free, red is start, and blue is the goal, do no change the colors that we already have.
+```
+
+### Assistant
+I have implemented the pre-created maze blueprints and in-memory runtime persistence:
+
+1. **Pre-Created Blueprints File ([board/blueprints.go](board/blueprints.go))**:
+   - Accurately decoded all 6 uploaded diagrams into discrete 10x15 state matrices (`CellWall`, `CellFree`, `CellStart`, `CellGoal`).
+   - Every maze has Start at coordinate `(2, 0)` and Goal at `(7, 14)`, with its distinct labyrinth obstacles and walls.
+   - Provided `GetBlueprint(name)` and `GetBlueprintNames()` for clean domain access.
+
+2. **Maze Selection Dropdown ([gui/control_panel.go](gui/control_panel.go))**:
+   - Added a `widget.NewSelect` dropdown selector titled "Laberintos Precreados" containing "Laberinto 1" through "Laberinto 6".
+   - Automatically disabled during search execution to prevent state conflicts.
+
+3. **In-Memory Runtime Session Persistence ([gui/app.go](gui/app.go))**:
+   - Maintained an in-memory active board registry (`activeBoards map[string]*board.Board`).
+   - When you modify a maze and switch to another one, your changes are preserved in memory and restored when you switch back.
+   - When the application is closed and reopened, changes are not persisted to disk, loading clean blueprints fresh.
+   - Clicking "Reiniciar Tablero" restores the currently active maze to its original blueprint state.
+
+4. **Testing & Color Palette**:
+   - Existing GUI color palette remained untouched.
+   - Verified that all 6 blueprints are fully solvable by BFS in [board/blueprints_test.go](board/blueprints_test.go) and added `TestAppSessionPersistence` in [gui/board_view_test.go](gui/board_view_test.go) with 100% test pass.
+   - Recompiled binary `bin/maze-solver`.
+
+Would you like to run the application now to test switching between the 6 mazes?

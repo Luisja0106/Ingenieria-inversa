@@ -48,37 +48,13 @@ func NewBoard(rows, cols int) *Board {
 	}
 }
 
-// DefaultBoard returns a pre-configured standard maze board with walls, start, and goal.
+// DefaultBoard returns a pre-configured standard maze board from the default blueprint.
 func DefaultBoard() *Board {
-	b := NewBoard(DefaultRows, DefaultCols)
-	b.Start = Position{Row: 1, Col: 1}
-	b.Goal = Position{Row: 8, Col: 13}
-
-	// Preset wall layout for an interesting, solvable labyrinth (10 rows x 15 columns)
-	wallCoordinates := []Position{
-		// Column 4 vertical obstacle (pass below at rows 7, 8, 9)
-		{Row: 0, Col: 4}, {Row: 1, Col: 4}, {Row: 2, Col: 4}, {Row: 3, Col: 4}, {Row: 4, Col: 4}, {Row: 5, Col: 4}, {Row: 6, Col: 4},
-
-		// Column 7 vertical obstacle (pass above at rows 0, 1, 2)
-		{Row: 3, Col: 7}, {Row: 4, Col: 7}, {Row: 5, Col: 7}, {Row: 6, Col: 7}, {Row: 7, Col: 7}, {Row: 8, Col: 7}, {Row: 9, Col: 7},
-
-		// Column 10 vertical obstacle (pass below at rows 7, 8, 9)
-		{Row: 0, Col: 10}, {Row: 1, Col: 10}, {Row: 2, Col: 10}, {Row: 3, Col: 10}, {Row: 4, Col: 10}, {Row: 5, Col: 10}, {Row: 6, Col: 10},
-
-		// Horizontal/vertical branch obstacle around column 12
-		{Row: 4, Col: 12}, {Row: 5, Col: 12}, {Row: 6, Col: 12},
+	bp, found := GetBlueprint("Laberinto 1")
+	if found {
+		return bp.CreateBoard()
 	}
-
-	b.Clear()
-	for _, w := range wallCoordinates {
-		if b.InBounds(w) {
-			b.Cells[w.Row][w.Col] = CellWall
-		}
-	}
-	b.Cells[b.Start.Row][b.Start.Col] = CellStart
-	b.Cells[b.Goal.Row][b.Goal.Col] = CellGoal
-
-	return b
+	return NewBoard(DefaultRows, DefaultCols)
 }
 
 // InBounds checks if a position is within the board boundaries.
