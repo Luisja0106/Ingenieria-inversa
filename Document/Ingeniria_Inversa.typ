@@ -405,3 +405,53 @@ Tras ver la ejecucion de ambos casos se noto que:
 #pagebreak()
 
 = Fase 2: Ingeniería Directa con IA (Vibe-Coding)
+
+#v(1em)
+
+== Trabajo Con IA
+
+=== Iteraciones Significativas:
+
+==== Iteración 1:
+#v(1em)
+- *Prompt:* ' /Plan yeah let's start, I let you all the info about the project in @[resources] that diagrams are based in a java implementation, but this time we'll using go as a language, because we want to take advantage of goroutines, and the speed of go, for the GUI I let you use the library or framework that you think will fit better with the project.'
+
+#v(1em)
+
+- *Respuesta o Fragmento Relevante:*'The hierarchy would be: internal/domain: Board grid, cell definitions (Free, Wall, Start, Goal, Visited, Path), and board state mutations.
+  internal/search: AIMA search formulation (Problem, Node, Frontier, BFS, DFS, and Metrics).
+  internal/runner: Concurrency engine wrapping search runs with goroutines, channels, and cancellation contexts.
+  internal/ui: Fyne-based view (board canvas, controls, and metrics panel in Spanish).
+  cmd/maze/main.go: Application entrypoint.'
+
+- *Defecto detectado:* La gerarquia propuesta por la IA aunque funcionaria es compleja de comprender a simple vista y por lo tanto de mantener, además de no dejar muy claro la relación entre los diferentes paquetes y directorios.
+
+- *Cambio y Resultado verificable:* Tras una revision de la respuesta de la IA se decidió implementar una jerarquia mucho mas clara aplicando los principios de la Scream Architecture, dejando la jerarquia de directorios mucho mas clara, esto es evidenciable en la gerarquia del proyecto.
+
+#v(1em)
+==== Iteración 2:
+#v(1em)
+- *Prompt:* 'Go ahead, but for the package hierarchy use scream architecture better, it would make way easier understand the project'
+
+- *Respuesta o Fragmento Relevante:* En Board.go se define la grilla del tablero, y en la GUI se definia el tablero de nuevo.
+
+- *Defecto detectado:* Que la GUI y el tablero no compartan la misma fuente de verdad, es decir, que la GUI tenga su propio tablero y el tablero del juego tenga otro, esto puede llevar a inconsistencias y errores.
+- *Cambio y Resultado verificable:* Se decidio indicarle por medio del siguiente prompt 'Now, I saw that the board and the GUI have to be modified both to actually chang the size and the form of the board, that is a mistake, couldn't you make that the board file is the just and only truth source, the GUI shouldn't care about that it just should show the info that recives from the board.' y la IA implemento el cambio haciendo las respectivas modificaciones, dejando la GUI como un simple observador del tablero y no como una fuente de verdad, esto es evidenciable en el codigo pues ahora se pueden tener multiples tableros viviendo simultaneamente y la GUI solo se encargara de mostrar la informacion que recibe.
+
+#v(1em)
+==== Iteración 3:
+#v(1em)
+- *Prompt:* 'Now, I saw that the board and the GUI have to be modified both to actually chang the size and the form of the board, that is a mistake, couldn't you make that the board file is the just and only truth source, the GUI shouldn't care about that it just should show the info that recives from the board.'
+
+- *Respuesta o Fragmento Relevante:* Hizo las modificaciones necesarias para que la GUI solo sea un observador del tablero y no una fuente de verdad, además de hacer que el tablero sea la única fuente de verdad y que pueda vivir múltiples tableros simultáneamente.
+
+- *Defecto detectado:* Con el cambio implementado ya se puede realizar el cambio en el sistema para que contenga uno o mas laberintos pre-definidos y que sean cambiables por el usuario.
+- *Cambio y Resultado verificable:*: Se le indico a la IA que implementara la funcionalidad de tener laberintos predefinidos y que el usuario pueda cambiar entre ellos, se puede evidenciar en el codigo y al ejecutar la app.
+
+
+=== Decisiones inducidas por la IA que no estaban explicitas en los modelos:
+
+#v(1em)
+1. Que se muestre una animacion de los nodos siendo recorridos, La IA dio por hecho que el usuario quiere evidenciar como el sistema recorre el tablero en busca de la solucion antes de hacer la animacion del agente realmente solucionando el laberinto. Dado a que no afecta directamente al funcionamiento del sistema y de hecho mejora la UX se decidio aceptar el cambio mas aun teniendo en cuenta que se puede desactivar en cualquier momento.
+#v(1em)
+2. Que el usuario pueda seleccionar y cambiar la posicion de la meta y salida, La IA dio por hecho que la feature de cambiar el estado o tipo de una casilla tambien se aplicaba para las casillas de salida y meta a diferencia de solo cambiar entre muro y libre, dado que en el codigo de java hay indicios de que eso queria ser una feature pues el archivo laberinto tiene ese caso previsto en su metodo de actualizarCasilla pero la UI no lo permite, se decidio dejar pues tambien mejora la UX y expande el funcionamiento del sistema sin modificar su proposito original.
