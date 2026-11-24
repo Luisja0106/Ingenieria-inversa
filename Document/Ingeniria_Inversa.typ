@@ -474,42 +474,42 @@ Tras ver la ejecucion de ambos casos se noto que:
   [Se encuentra la solucion y se muestra la informacion relacionada a la misma],
   [Muestra el resultado directamente asi como las metricas relacionadas],
   [Muestra el resultado, las metricas igual que el original pero ademas muestra los nodos recorridos para llegar a la solucion.],
-  [Figura 9],
+  [@fig-cp-01],
 
   [*CP-02*],
   [Obstaculo que obliga desvio],
   [Se hace el desvio dependiendo del tipo de metodo de busqueda que se tenga seleccionado.],
   [Hace el desvio y muestra la solucion junto a sus respectivas metricas],
   [Al igual que el original hace el desvio, pero al igual que el CP anterior muestra los nodos visitados para hallar la solucion.],
-  [Figura 10],
+  [@fig-cp-02],
 
   [*CP-03*],
   [Ausencia de solucion],
   [Se muestra que no se encuentra la solucion y no se muestra ningun resultado en el panel del laberinto.],
   [No muestra nada en el panel propio del laberinto, en la zona de informacion muestra que no pudo encontrar la solucion.],
   [Indica que su estado es 'Sin Solucion', muestra visualmente que recorrio todo el laberinto usando los nodos en busca de una solucion.],
-  [Figura 11],
+  [@fig-cp-03],
 
   [*CP-04*],
   [Seleccion de dos algoritmos],
   [Se cambia la ruta escogida para solucionar el problema],
   [Muestra dos soluciones diferentes basado en el algoritmo escogido.],
   [Muestra tambien dos soluciones diferentes, y los nodos necesarios para ellos, ademas aunque se seleccionaron los mismo metodos de busqueda hay una diferencia en la solucion utilizando el metodode busqueda de profundidad entre la solucion que da el programa original (java), y la nueva version (go)],
-  [Figura 12],
+  [@fig-cp-04],
 
   [*CP-05*],
   [Reinicio],
   [Se elimina la solucion ya encontrada y se hace una busqueda nuevamente.],
   [Limpia la solucion anterior y hace busqueda nuevamente de una solucion],
   [Exactamente lo mismo que la version de original],
-  [Figura 13],
+  [@fig-cp-05],
 
   [*CP-06*],
   [Borrar la solucion mientras se ejecuta la busqueda],
   [Que No se permita la limpieza del tablero mientras se ejecuta una solucion.],
   [Perminte que se haga una limpieza mientras se ejecuta, lo cual deja el camino de solucion llevado a cabo por el agente incompleto],
   [Bloquea la UI para impedir que se realize cualquier accion mientras se ejecuta la solucion],
-  [Figura 14],
+  [@fig-cp-06],
 )
 #pagebreak()
 ===== Evidencias
@@ -517,25 +517,25 @@ Tras ver la ejecucion de ambos casos se noto que:
 #figure(
   image("assets/Evidences/CP-01.png"),
   caption: "Evidencia del CP-01",
-)
+) <fig-cp-01>
 #figure(
   image("assets/Evidences/CP-02.png"),
   caption: "Evidencia del CP-02",
-)
+) <fig-cp-02>
 #figure(
   image("assets/Evidences/CP-03.png"),
   caption: "Evidencia del CP-03",
-)
+) <fig-cp-03>
 #figure(
   image("assets/Evidences/CP-04.png"),
   caption: "Evidencia del CP-04",
-)
+) <fig-cp-04>
 #figure(
   image("assets/Evidences/CP-05.png"),
   caption: "Evidencia del CP-05",
-)
+) <fig-cp-05>
 #figure(
   image("assets/Evidences/CP-06.png"),
   caption: "Evidencia del CP-06",
-)
+) <fig-cp-06>
 
