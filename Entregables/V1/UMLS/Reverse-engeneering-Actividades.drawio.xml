@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36">
+  <diagram id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd" name="Page-1">
+    <mxGraphModel dx="399" dy="470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u4imR438LiDXcQTsgbZa-61" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;fontSize=9;" value=" " vertex="1">
+          <mxGeometry height="1490" width="2035" x="40.000000000000455" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-71" parent="u4imR438LiDXcQTsgbZa-61" style="swimlane;startSize=20;html=1;" value="Usuario" vertex="1">
+          <mxGeometry height="1470" width="330" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-72" parent="u4imR438LiDXcQTsgbZa-71" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="159.99999999999955" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-73" parent="u4imR438LiDXcQTsgbZa-71" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Usuario hace click en el boton buscar" vertex="1">
+          <mxGeometry height="40" width="120" x="114.99999999999955" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-74" edge="1" parent="u4imR438LiDXcQTsgbZa-71" source="u4imR438LiDXcQTsgbZa-72" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=light-dark(#000000,#000000);rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-73" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="89.99999999999955" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-62" parent="u4imR438LiDXcQTsgbZa-61" style="swimlane;startSize=20;html=1;" value="HIlo Principal" vertex="1">
+          <mxGeometry height="1470" width="330" x="330" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-55" parent="u4imR438LiDXcQTsgbZa-62" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema crea una Instancia de MainThread" vertex="1">
+          <mxGeometry height="40" width="120" x="114.99999999999955" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-69" edge="1" parent="u4imR438LiDXcQTsgbZa-62" source="u4imR438LiDXcQTsgbZa-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-59" parent="u4imR438LiDXcQTsgbZa-62" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema modifica la GUI para indicar que se va a hacer la búsqueda de la solucion" vertex="1">
+          <mxGeometry height="40" width="290" x="29.999999999999545" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-56" edge="1" parent="u4imR438LiDXcQTsgbZa-62" source="u4imR438LiDXcQTsgbZa-55" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=light-dark(#000000,#000000);rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-59" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="89.99999999999955" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-67" parent="u4imR438LiDXcQTsgbZa-62" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema inicia el hilo secundario" vertex="1">
+          <mxGeometry height="40" width="120" x="114.99999999999955" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-68" edge="1" parent="u4imR438LiDXcQTsgbZa-61" source="u4imR438LiDXcQTsgbZa-67" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=light-dark(#000000,#000000);rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-70" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="379.99999999999955" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-76" edge="1" parent="u4imR438LiDXcQTsgbZa-61" source="u4imR438LiDXcQTsgbZa-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;fillColor=#e51400;strokeColor=light-dark(#000000,#000000);endArrow=open;endFill=0;fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-55">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="200" />
+              <mxPoint x="290" y="200" />
+            </Array>
+            <mxPoint x="174.99999999999955" y="250.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-63" parent="u4imR438LiDXcQTsgbZa-61" style="swimlane;startSize=20;html=1;" value="Hilo secundario (MainThread)" vertex="1">
+          <mxGeometry height="1470" width="280" x="660" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-70" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema bloquea la GUI mientras realiza operaciones" vertex="1">
+          <mxGeometry height="40" width="150" x="80" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-84" edge="1" parent="u4imR438LiDXcQTsgbZa-63" source="u4imR438LiDXcQTsgbZa-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-81" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema lee la informacion de la casilla de inicio y de salida" vertex="1">
+          <mxGeometry height="40" width="150" x="70" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-82" edge="1" parent="u4imR438LiDXcQTsgbZa-63" source="u4imR438LiDXcQTsgbZa-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.567;entryY=-0.058;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-81">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-86" edge="1" parent="u4imR438LiDXcQTsgbZa-63" source="u4imR438LiDXcQTsgbZa-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-85">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-83" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema crea una instancia de Problema" vertex="1">
+          <mxGeometry height="40" width="150" x="70" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-88" edge="1" parent="u4imR438LiDXcQTsgbZa-63" source="u4imR438LiDXcQTsgbZa-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-85" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema verifica que método de búsqueda tiene seleccionado el usuario y crea una instancia del mismo" vertex="1">
+          <mxGeometry height="40" width="270" x="10" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-87" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema llama a la instacia creada del problema y le pasa el metodo de solucion creado" vertex="1">
+          <mxGeometry height="70" width="150" x="70" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-108" edge="1" parent="u4imR438LiDXcQTsgbZa-63" source="u4imR438LiDXcQTsgbZa-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-101" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Obtiene la solucion brindada" vertex="1">
+          <mxGeometry height="40" width="150" x="60" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-107" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="llama al metodo dibujarSolucion de Laberinto" vertex="1">
+          <mxGeometry height="40" width="150" x="60" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-173" edge="1" parent="u4imR438LiDXcQTsgbZa-63" source="u4imR438LiDXcQTsgbZa-171" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-172">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-171" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="escribe la solucion en area_resultado" vertex="1">
+          <mxGeometry height="40" width="150" x="60" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-175" edge="1" parent="u4imR438LiDXcQTsgbZa-63" source="u4imR438LiDXcQTsgbZa-172" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-174">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-172" parent="u4imR438LiDXcQTsgbZa-63" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Quita el bloqueo de la GUI y vuelve todos sus elementos a su estado incial" vertex="1">
+          <mxGeometry height="40" width="210" x="30" y="1310" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-174" parent="u4imR438LiDXcQTsgbZa-63" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="119.99999999999955" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-64" parent="u4imR438LiDXcQTsgbZa-61" style="swimlane;startSize=20;html=1;" value="Clase Problema" vertex="1">
+          <mxGeometry height="1470" width="300" x="940" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-89" parent="u4imR438LiDXcQTsgbZa-64" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema crea el nodo raiz del problema" vertex="1">
+          <mxGeometry height="40" width="150" x="80" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-91" parent="u4imR438LiDXcQTsgbZa-64" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Sistema llama al metodo finSolution de search" vertex="1">
+          <mxGeometry height="40" width="150" x="80" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-92" edge="1" parent="u4imR438LiDXcQTsgbZa-64" source="u4imR438LiDXcQTsgbZa-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-90" edge="1" parent="u4imR438LiDXcQTsgbZa-61" source="u4imR438LiDXcQTsgbZa-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.006;entryY=0.52;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-98" edge="1" parent="u4imR438LiDXcQTsgbZa-61" source="u4imR438LiDXcQTsgbZa-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-102" edge="1" parent="u4imR438LiDXcQTsgbZa-61" source="u4imR438LiDXcQTsgbZa-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-110" edge="1" parent="u4imR438LiDXcQTsgbZa-61" source="u4imR438LiDXcQTsgbZa-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-93" parent="u4imR438LiDXcQTsgbZa-61" style="swimlane;startSize=20;html=1;" value="Metodo de busqueda (implementacion de Search)" vertex="1">
+          <mxGeometry height="1470" width="360" x="1240" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-100" edge="1" parent="u4imR438LiDXcQTsgbZa-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-99">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="129.99999999999955" y="910" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-97" parent="u4imR438LiDXcQTsgbZa-93" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Hace la busqueda de la solucion del laberinto." vertex="1">
+          <mxGeometry height="40" width="150" x="50" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-99" parent="u4imR438LiDXcQTsgbZa-93" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Registra el resultado obtenido en un objecto Solution" vertex="1">
+          <mxGeometry height="40" width="150" x="55" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="SdmHRjaJnI6Wnzvez4ik-3" edge="1" parent="u4imR438LiDXcQTsgbZa-93" source="u4imR438LiDXcQTsgbZa-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="u4imR438LiDXcQTsgbZa-99" value="">
+          <mxGeometry relative="1" x="-0.8207" as="geometry">
+            <mxPoint x="1475.0000000000005" y="900" as="sourcePoint" />
+            <mxPoint x="129.99999999999955" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-103" parent="u4imR438LiDXcQTsgbZa-61" style="swimlane;startSize=20;html=1;" value="Laberinto" vertex="1">
+          <mxGeometry height="1470" width="435" x="1600" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-109" parent="u4imR438LiDXcQTsgbZa-103" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Recibe la solucion" vertex="1">
+          <mxGeometry height="40" width="150" x="70" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-111" parent="u4imR438LiDXcQTsgbZa-103" style="rhombus;whiteSpace=wrap;html=1;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);fontSize=9;" value="Esta Activado el boton de animacion" vertex="1">
+          <mxGeometry height="80" width="160" x="65" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-112" edge="1" parent="u4imR438LiDXcQTsgbZa-103" source="u4imR438LiDXcQTsgbZa-111" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=light-dark(#000000,#000000);rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;fontColor=#000000;" value="no">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="349.99999999999955" y="1170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-113" edge="1" parent="u4imR438LiDXcQTsgbZa-103" source="u4imR438LiDXcQTsgbZa-111" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=top;endArrow=open;endSize=8;strokeColor=light-dark(#000000,#000000);rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-115" value="si">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="139.99999999999955" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-114" edge="1" parent="u4imR438LiDXcQTsgbZa-103" source="u4imR438LiDXcQTsgbZa-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.563;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-119" edge="1" parent="u4imR438LiDXcQTsgbZa-103" source="u4imR438LiDXcQTsgbZa-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-115" parent="u4imR438LiDXcQTsgbZa-103" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Anima la solucion" vertex="1">
+          <mxGeometry height="40" width="185" x="52.499999999999545" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-120" edge="1" parent="u4imR438LiDXcQTsgbZa-103" source="u4imR438LiDXcQTsgbZa-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-116" parent="u4imR438LiDXcQTsgbZa-103" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=light-dark(#000000,#000000);" value="Pinta la solucion" vertex="1">
+          <mxGeometry height="40" width="185" x="249.99999999999955" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-117" parent="u4imR438LiDXcQTsgbZa-103" style="shape=line;html=1;strokeWidth=6;strokeColor=light-dark(#000000,#000000);fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="10" width="200" x="139.99999999999955" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="u4imR438LiDXcQTsgbZa-118" edge="1" parent="u4imR438LiDXcQTsgbZa-61" source="u4imR438LiDXcQTsgbZa-117" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=light-dark(#000000,#000000);rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=1.009;entryY=0.609;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#000000;" target="u4imR438LiDXcQTsgbZa-171" value="">
+          <mxGeometry relative="1" x="-0.2108" as="geometry">
+            <mxPoint x="1099.5192307692303" y="1330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
