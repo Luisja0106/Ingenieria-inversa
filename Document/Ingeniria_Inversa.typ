@@ -641,4 +641,6 @@ Creo que en mi proceso de ingenieria inversa al ser la primera vez que lo hago, 
 Junto a este documento se adjuntan direntes archivos y directorios que corresponden a:
 1. El codigo fuente de la nueva version implementada en Go, en el directorio Codigo, para ejectuarlo se debe tener instalado go y ejecutar el comanodo go run main.go desde la terminal, estando ubicado en run/maze-solver.
 
-2. La conversacion con la IA, en el directorio Conversacion, La conversacion se realizo en ingles, y esta en archivo markdown (.md), se puede visualizar en cualquier editor de texto o codigo, o en un visualizador online de markdown (Como por ejemplo https://phcode.dev/tools/es/markdown-viewer.html)
+2. La conversacion con la IA, en el directorio Conversacion, La conversacion se realizo en ingles, y esta en archivo markdown (.md), se puede visualizar en cualquier editor de texto o codigo, o en un visualizador online de markdown (Como por ejemplo https://phcode.dev/tools/es/markdown-viewer.html).
+
+3. El proyecto esta subido a un repostiorio de github, (https://github.com/Luisja0106/Ingenieria-inversa) donde se puede evidenciar la modificacion y fecha de cada archivo, ademas de poder ver el historial de cambios y commits realizados.
