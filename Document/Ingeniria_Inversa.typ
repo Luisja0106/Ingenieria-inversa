@@ -323,14 +323,14 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
 #figure(
   image("assets/UMLs/casos de uso.png"),
   caption: [Diagrama de Casos de Uso del sistema],
-)
+)<fig-uml-use-cases>
 #v(2em)
 === Diagrama de Clases
 #v(1em)
 #figure(
   image("assets/UMLs/Clases.png"),
   caption: [Diagrama de Clases del sistema],
-)
+)<fig-uml-clases>
 #v(2em)
 === Diagramas de Secuencia
 #v(1em)
@@ -342,7 +342,7 @@ Parece que el laberinto es una grilla de cuadros (15x10) donde los cuadros de co
 #figure(
   image("assets/UMLs/Secuencia-2.drawio.png"),
   caption: [Diagrama de Secuencias del sistema, caso de busqueda de clickear una casilla para cambiar su estado],
-)
+)<fig-uml-secuencia-2>
 #v(2em)
 === Diagrama de Actividad
 #v(1em)
@@ -395,12 +395,12 @@ Tras ver la ejecucion de ambos casos se noto que:
 #figure(
   image("assets/UMLs/Secuencia-1-modificado.png"),
   caption: [Diagrama de secuencia tras revision],
-)
+)<fig-uml-secuencia-1>
 
 #figure(
   image("assets/UMLs/Actividades.png"),
   caption: [Diagrama de Actividades despues de las modificaciones, caso de busqueda de solucion],
-)
+)<fig-uml-actividades>
 
 #pagebreak()
 
@@ -553,5 +553,92 @@ Tras ver la ejecucion de ambos casos se noto que:
     [*Modulo de la Nueva applicacion*],
     [*Prueba*],
   ),
-  [],
+  [*Busqueda de solucion*],
+  [Problem.solve()],
+  [#link(<fig-uml-secuencia-1>)[Diagrama de Secuencia 1], #link(<fig-uml-actividades>)[Diagrama de Actividad]],
+  [runner.SolveAsync()],
+  [@fig-trazabilidad-1],
+
+  [*Poder seleccionar multiples metodos de busqueda*],
+  [if anidado en MainThread.run()],
+  [#link(<fig-uml-actividades>)[Diagrama de Actividad], #link(<fig-uml-clases>)[Diagrama de clases]],
+  [control_panel.\
+    getAlgorithm()],
+  [@fig-trazabilidad-2],
+
+  [*Mostrar las metricas relacionadas a la solucion*],
+  [El metodo toString de Solution, utilizado en MainThread, mostrado en el textArea de LaberintoGUI],
+  [#link(<fig-uml-actividades>)[Diagrama de Actividad], #link(<fig-uml-clases>)[Diagrama de clases]],
+  [metrics_panel. \ DisplayResults()],
+  [@fig-trazabilidad-3],
+
+  [*Modificar el tablero*],
+  [Laberinto.\ actualizarCasilla()],
+  [#link(<fig-uml-secuencia-2>)[Diagrama de Secuencias 2]],
+  [control_panel. \ getEditMode(), board.CycleCell()],
+  [@fig-trazabilidad-4],
+
+  [*Animar al agente mientras resuelve el laberinto*],
+  [Laberinto.\ dibujaSolucion()],
+  [#link(<fig-uml-actividades>)[Diagrama de Actividad]],
+  [app. \ animateAgentPath()],
+  [@fig-trazabilidad-5],
 )
+#v(1em)
+== Pruebas
+#v(1em)
+#figure(
+  image("assets/Evidences/Evidencia-1.png"),
+  caption: "Evidencia de la prueba de trazabilidad 1",
+) <fig-trazabilidad-1>
+#v(1em)
+#figure(
+  image("assets/Evidences/Evidencia-2.png"),
+  caption: "Evidencia de la prueba de trazabilidad 2",
+)<fig-trazabilidad-2>
+#v(1em)
+#figure(
+  image("assets/Evidences/Evidencia-3.png"),
+  caption: "Evidencia de la prueba de trazabilidad 3",
+)<fig-trazabilidad-3>
+#v(1em)
+#figure(
+  image("assets/Evidences/Evidencia-4.png"),
+  caption: "Evidencia de la prueba de trazabilidad 4",
+)<fig-trazabilidad-4>
+#v(1em)
+#figure(
+  image("assets/Evidences/Evidencia-5.png"),
+  caption: "Evidencia de la prueba de trazabilidad 5",
+)<fig-trazabilidad-5>
+
+
+
+== Diferencias de Implementacion
+
+1. La nueva version implementada en Go a la hora de buscar la solucion del laberinto muestra los nodos que fueron visitados para hallar la solucion, mientras que la version original en Java no lo hace. Esto Considero que es una Mejora justificada, pues permite al usuario ver como el sistema recorre el laberinto en busca de la solucion y no solo el resultado final.
+
+2. La nueva version Cuenta con la opcion de poder cambiar el tablero y el tipo de las casillas no solo entre libre y muro, como lo hace la version original, sino tambien permite colocar la meta y la salida en cualquier casilla del tablero. Esto definitivamente tambien es una mejora justificada, pues permite al usuario tener un mayor control sobre el tablero y la forma en que se resuelve el laberinto, ademas de que en la version original hay indicios de que esta funcionalidad estaba prevista pero no implementada.
+
+3. La nueva version Tiene un select para seleccionar la velocidad, a diferencia de la version original que tiene un radio button para activar o desactivar la animacion, y un slider para seleccionar la velocidad. Esto considero que es una simplificacion deliberada, pues realmente es mas simple tener un rango de velocidades para la animacion y es mucho mas claro para el usuario.
+
+
+== Respuestas:
+
+Considero que lo mas complicado dentro de lo que cabe en el desarrollo con la IA fue el de implementar los metodos de busqueda, pues a decir verdad en la implementacion original de java no comprendia al 100% su funcionamiento, entonces fue complicado poder guiar a la IA para implementar los metodos de busqueda para ser lo mas similar posible a la version original.
+
+En los Diagramos considero que falto indicar los modelos de busqueda, esto podria simplificar muchisimo el desarrollo y la comprension del sistema, sin embargo, la IA comprendio mi diseño y lo explicado en el contrato abstracto de busqueda y lo implemeto correctamente.
+
+Gracias al diseño fue facil evidenciar el error que estaba cometiendo la IA a la hora de implementar la GUI, pues estaba haciendo que la GUI tuviera su propio tablero y no compartiera la fuente de verdad con el tablero del juego, esto podria haber generado inconsistencias y errores en el sistema, sin embargo gracias a los diagramas fue sencillo pensar en una alternativa e indicarle a la IA como implementarla.
+
+Creo que en mi proceso de ingenieria inversa al ser la primera vez que lo hago, empece bastante perdido a leer el codigo sin tener idea de que hacia el programa, lo cual me lleno de dudas y confusiones, pues en un principio pense que el sistema era un juego donde el usuario era quien resolvia el laberinto y el sistema lo generaba aleatoreamente, pero no fue hasta que ejecute el programa que pude comprender y entender la abstraccion del sistema.
+
+
+#pagebreak()
+
+= Informacion Adicional
+
+Junto a este documento se adjuntan direntes archivos y directorios que corresponden a:
+1. El codigo fuente de la nueva version implementada en Go, en el directorio Codigo, para ejectuarlo se debe tener instalado go y ejecutar el comanodo go run main.go desde la terminal, estando ubicado en run/maze-solver.
+
+2. La conversacion con la IA, en el directorio Conversacion, La conversacion se realizo en ingles, y esta en archivo markdown (.md), se puede visualizar en cualquier editor de texto o codigo, o en un visualizador online de markdown (Como por ejemplo https://phcode.dev/tools/es/markdown-viewer.html)
